@@ -193,7 +193,7 @@ button{cursor:pointer}
               <button type="button" data-test-mode="beamer">Beamer</button>
             </div>
           </div>
-          <span class="badge badge-muted" title="Build-Version">v10-player-print</span>
+          <span class="badge badge-muted" title="Build-Version">v11-winner-view</span>
           <span id="publishBadge" class="badge badge-muted">Nicht veröffentlicht</span>
           <span id="phaseBadge" class="badge">Vorbereitung</span>
         </div>
@@ -782,7 +782,7 @@ button{cursor:pointer}
     return `<div class="card player-group-focus">
       <div class="section-head"><div><div class="eyebrow">Gruppe ${groupName}</div><h3>${playerId?'Meine Gruppe':'Gruppenübersicht'}</h3><p class="small muted">Board ${g.board} · ${done}/10 Spiele gespielt</p></div><span class="badge ${done===10?'badge-success':'badge-muted'}">${done}/10</span></div>
       <div class="table-wrap"><table class="table player-table"><thead><tr><th>#</th><th>Spieler</th><th>Sp.</th><th>Siege</th><th>N.</th></tr></thead><tbody>${st.map((r,i)=>`<tr class="${r.id===playerId?'me':''}"><td>${i+1}</td><td><strong>${esc(playerName(getPlayer(r.id),true))}</strong>${r.id===playerId?' <span class="badge badge-success">Du</span>':''}</td><td>${r.played}</td><td>${r.wins}</td><td>${r.losses}</td></tr>`).join('')}</tbody></table></div>
-      <details class="player-group-matches"><summary>Alle Spiele der Gruppe ${groupName}</summary><div class="player-match-list">${g.matches.map((m,i)=>{const a=getPlayer(m.playerA),b=getPlayer(m.playerB);return `<div class="player-line"><span><span class="muted">${i+1}.</span> <strong>${esc(playerName(a))}</strong> – <strong>${esc(playerName(b))}</strong></span>${statusBadgeForMatch(m)}</div>`}).join('')}</div></details>
+      <details class="player-group-matches"><summary>Alle Spiele der Gruppe ${groupName}</summary><div class="player-match-list">${g.matches.map((m,i)=>{const a=getPlayer(m.playerA),b=getPlayer(m.playerB);const completed=m.status==='completed';const aWon=completed&&m.winnerId===m.playerA;const bWon=completed&&m.winnerId===m.playerB;return `<div class="player-line"><span><span class="muted">${i+1}.</span> <strong>${aWon?'✓ ':''}${esc(playerName(a))}</strong> – <strong>${bWon?'✓ ':''}${esc(playerName(b))}</strong></span>${completed?`<span class="badge badge-success">Sieger: ${esc(playerName(getPlayer(m.winnerId)))}</span>`:statusBadgeForMatch(m)}</div>`}).join('')}</div></details>
     </div>`;
   }
 
@@ -950,7 +950,7 @@ button{cursor:pointer}
     else if(type==='groups') body=printGroupsPages();
     else if(type==='ko') body=`<section class="print-page">${printHeader('KO-Baum','Fester 32er-Baum · ab KO 501 Double Out')}${printKoHtml()}${pageFooter('KO-Plan','3. Alpirsbacher Steeldartscup')}</section>`;
     else body=printOverallIntro()+printGroupsPages()+Array.from({length:6},(_,i)=>printBoardTable(i+1)).join('')+`<section class="print-page">${printHeader('KO-Phase','Fester Turnierbaum')}${printKoHtml()}${pageFooter('KO-Phase','Letzte Seite')}</section>`;
-    return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Steeldartscup – Druck</title><style>${printBaseCss(type)}</style></head><body><div class="no-print"><strong>Druckansicht v10.</strong> A4 Hochformat · Skalierung 100 %. Für ein sauberes PDF bitte Browser-Kopf-/Fußzeilen deaktivieren. Über „Drucken“ → „Als PDF speichern“ kann direkt ein PDF erzeugt werden.</div>${body}</body></html>`;
+    return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Steeldartscup – Druck</title><style>${printBaseCss(type)}</style></head><body><div class="no-print"><strong>Druckansicht v11.</strong> A4 Hochformat · Skalierung 100 %. Für ein sauberes PDF bitte Browser-Kopf-/Fußzeilen deaktivieren. Über „Drucken“ → „Als PDF speichern“ kann direkt ein PDF erzeugt werden.</div>${body}</body></html>`;
   }
 
   function openPrint(type,board=null){
