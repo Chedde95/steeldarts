@@ -1,14 +1,13 @@
-# Alpirsbacher Steeldartscup – v7
+# 3. Alpirsbacher Steeldartscup – Prototyp v8
 
-GitHub-Pages-Testversion der Turniersoftware.
+Build: `v8-player-print`
 
-## Neu in v7
-- Gesamtübersicht „Turnierplan“ für die Turnierleitung
-- kompletter Board-Ablauf mit Live-Fortschritt und Status
-- Übersicht aller 16 Gruppen
-- erweiterte Spieleransicht mit Spieltagsübersicht
-- Druckzentrale für Gesamtplan, Gruppen, KO-Baum und Board 1–6
-- druckoptimierte Board-Pläne als Papier-Backup
+Für GitHub Pages muss `index.html` direkt im Hauptverzeichnis des Repositorys liegen.
 
-## GitHub Pages
-`index.html` direkt in das Hauptverzeichnis des Repositories laden.
+Neu in v8:
+- Spieleransicht startet mit „Meine Gruppe“
+- andere Gruppen über klare Gruppenauswahl
+- eigener „Turnierplan gesamt“
+- nächstes Spiel / Spiele vor dir bleibt prominent oben
+- überarbeitete Druckansicht
+- Board-Papierpläne mit maximal 15 Spielen pro A4-Seite und großen Ergebnisfeldern
