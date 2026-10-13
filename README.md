@@ -1,13 +1,14 @@
-# 3. Alpirsbacher Steeldartscup – Prototyp v8
+# Alpirsbacher Steeldartscup – Prototyp v9-clean-print
 
-Build: `v8-player-print`
+Ein-Datei-Prototyp der Turniersoftware. Für GitHub Pages genügt `index.html` im Root des Repositories.
 
-Für GitHub Pages muss `index.html` direkt im Hauptverzeichnis des Repositorys liegen.
+## Neu in v9
+- Spieleransicht: redundante Gruppen-Fortschrittsübersicht aus der Turnierübersicht entfernt.
+- Spieleransicht: klare Trennung zwischen Meine Gruppe, Andere Gruppen und Turnierübersicht/KO-Baum.
+- Druck: Board-Pläne A4 quer, 10 Spiele pro Seite, größere Ergebnisfelder.
+- Druck: Gruppenübersicht auf vier definierte A4-Seiten verteilt.
+- Druck: keine absolut positionierten Fußzeilen mehr; sauberere Seitenumbrüche.
+- Gesamtplan wird in definierte A4-Seiten aufgeteilt.
 
-Neu in v8:
-- Spieleransicht startet mit „Meine Gruppe“
-- andere Gruppen über klare Gruppenauswahl
-- eigener „Turnierplan gesamt“
-- nächstes Spiel / Spiele vor dir bleibt prominent oben
-- überarbeitete Druckansicht
-- Board-Papierpläne mit maximal 15 Spielen pro A4-Seite und großen Ergebnisfeldern
+## GitHub Pages
+`index.html` direkt im Hauptverzeichnis ablegen und Pages auf `main` + `/(root)` stellen.
