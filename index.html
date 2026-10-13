@@ -140,6 +140,14 @@ button{cursor:pointer}
   .dart-entry{grid-template-columns:1fr}.multiplier-panel{grid-template-columns:repeat(3,1fr)}.multiplier-panel button{min-height:44px}.number-pad{grid-template-columns:repeat(4,1fr);gap:6px}.number-pad button{min-height:46px;font-size:16px}.counter-history-list{grid-template-columns:1fr}.visit-panel{grid-template-columns:1fr}.visit-total{text-align:right}
 }
 
+/* v7 full-day overview + print center */
+.phase-rail{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:7px;margin:16px 0 20px}.phase-step{display:flex;align-items:center;gap:7px;padding:9px 8px;border:1px solid var(--border);background:var(--panel);border-radius:11px;color:var(--muted);font-size:11px;min-width:0}.phase-step span{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:var(--panel-3);font-weight:900;flex:0 0 auto}.phase-step strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.phase-step.active{border-color:#6d5731;color:#f5c772;background:#221d13}.phase-step.active span{background:var(--warning);color:#241806}.phase-step.done{border-color:#275c43;color:#6fe2a6}.phase-step.done span{background:var(--success);color:#07170f}.phase-rail.compact{margin:12px 0 16px}.phase-rail.compact .phase-step{padding:7px 6px}.phase-rail.compact .phase-step span{width:20px;height:20px}
+.day-hero{display:flex;align-items:center;justify-content:space-between;gap:24px;background:linear-gradient(135deg,#171c24,#11151b);margin-bottom:16px}.day-hero h3{font-size:24px;margin:4px 0}.big-progress-number{font-size:42px;font-weight:950;letter-spacing:-.04em}.day-metrics{margin-bottom:22px}.small-value{font-size:18px!important}.day-section{margin-top:26px}.day-board-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.day-board-card{min-width:0}.day-current,.day-next{display:flex;flex-direction:column;gap:4px;padding:11px 0;border-bottom:1px solid var(--border)}.day-current strong{font-size:15px}.schedule-details{margin-top:10px}.schedule-details summary{cursor:pointer;color:var(--muted);font-size:12px}.schedule-list{display:flex;flex-direction:column;gap:5px;margin-top:9px}.schedule-row{display:grid;grid-template-columns:30px 38px minmax(0,1fr) auto;align-items:center;gap:7px;padding:7px 8px;border:1px solid #2a313b;background:#12161c;border-radius:9px;font-size:11px}.schedule-row.running{border-color:#6d5731}.schedule-row.completed{opacity:.72}.schedule-no,.schedule-group{color:var(--muted);font-weight:800}.schedule-match{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:5px;align-items:center}.schedule-match strong:last-child{text-align:right}.all-groups-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.group-summary{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:11px}.group-summary .section-head{margin-bottom:6px}.mini-standing{display:flex;flex-direction:column;gap:4px}.mini-standing>div{display:flex;justify-content:space-between;gap:8px;font-size:10px;padding:4px 0;border-bottom:1px solid #252b34}.mini-standing>div:last-child{border-bottom:0}.mini-standing span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mini-standing strong{white-space:nowrap}
+.player-board-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.player-board-mini{display:flex;flex-direction:column;gap:3px;padding:10px;background:var(--panel-2);border:1px solid var(--border);border-radius:10px}.player-board-mini>span{font-size:11px;color:var(--muted)}.player-board-mini small{font-size:10px;line-height:1.25}.board-assignment-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.board-assignment-grid>div{display:flex;justify-content:space-between;gap:10px;padding:10px;border:1px solid var(--border);border-radius:10px;background:var(--panel-2)}.board-assignment-grid span{color:var(--muted);font-size:12px}.player-all-groups{grid-template-columns:repeat(2,minmax(0,1fr))}
+.print-intro{margin-bottom:14px}.print-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.print-card{display:flex;flex-direction:column;align-items:flex-start;gap:7px;text-align:left;min-height:145px;padding:17px;background:linear-gradient(180deg,var(--panel),#141820);border:1px solid var(--border);border-radius:15px;color:var(--text)}.print-card:hover{border-color:#586473;transform:translateY(-1px)}.print-card strong{font-size:16px}.print-card small{color:var(--muted);line-height:1.35}.print-icon{display:grid;place-items:center;min-width:40px;height:40px;padding:0 8px;border-radius:10px;background:var(--panel-3);font-weight:950;color:#fff}
+@media(max-width:1100px){.all-groups-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.phase-rail{grid-template-columns:repeat(4,minmax(0,1fr))}.print-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.day-hero{align-items:flex-start}.big-progress-number{font-size:32px}.day-board-grid{grid-template-columns:1fr}.all-groups-grid,.player-all-groups{grid-template-columns:1fr}.phase-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.player-board-strip,.board-assignment-grid,.print-grid{grid-template-columns:1fr}.schedule-row{grid-template-columns:26px 34px minmax(0,1fr)}.schedule-row>.badge{grid-column:3;justify-self:start}.player-tabs{grid-template-columns:repeat(2,1fr)}}
+
 </style>
 </head>
 <body>
@@ -180,7 +188,7 @@ button{cursor:pointer}
               <button type="button" data-test-mode="beamer">Beamer</button>
             </div>
           </div>
-          <span class="badge badge-muted" title="Build-Version">v6-darts</span>
+          <span class="badge badge-muted" title="Build-Version">v7-plan-print</span>
           <span id="publishBadge" class="badge badge-muted">Nicht veröffentlicht</span>
           <span id="phaseBadge" class="badge">Vorbereitung</span>
         </div>
@@ -214,6 +222,7 @@ button{cursor:pointer}
 
   const NAV = [
     ['dashboard','▦','Dashboard'],
+    ['dayplan','☷','Turnierplan'],
     ['checkin','✓','Check-in'],
     ['participants','👥','Teilnehmer'],
     ['draw','🎲','Auslosung'],
@@ -221,6 +230,7 @@ button{cursor:pointer}
     ['boards','🎯','Boards'],
     ['knockout','⌘','KO-Baum'],
     ['beamer','▣','Beamer'],
+    ['print','⎙','Drucken / PDF'],
     ['sync','↻','Anmeldung / Sync']
   ];
 
@@ -716,7 +726,7 @@ button{cursor:pointer}
       content.innerHTML=renderBeamer(true);
     } else {
       const meta=NAV.find(x=>x[0]===currentView); document.getElementById('pageTitle').textContent=meta?meta[2]:'Dashboard';
-      const views={dashboard:renderDashboard,checkin:renderCheckin,participants:renderParticipants,draw:renderDraw,groups:renderGroups,boards:renderBoards,knockout:renderKnockout,beamer:renderBeamer,sync:renderSync};
+      const views={dashboard:renderDashboard,dayplan:renderDayPlan,checkin:renderCheckin,participants:renderParticipants,draw:renderDraw,groups:renderGroups,boards:renderBoards,knockout:renderKnockout,beamer:renderBeamer,print:renderPrintCenter,sync:renderSync};
       content.innerHTML=(views[currentView]||renderDashboard)();
     }
     bindViewHandlers();
@@ -781,15 +791,123 @@ button{cursor:pointer}
       <div class="card metric"><span class="label">Bilanz</span><span class="value">${wins}:${completed.length-wins}</span><span class="small muted">Siege : Niederlagen</span></div>
       <div class="card metric"><span class="label">Board</span><span class="value">${board||'–'}</span></div>
     </div>
-    <div class="player-tabs tabs"><button class="active" data-player-tab="group">Meine Gruppe</button><button data-player-tab="matches">Meine Spiele</button><button data-player-tab="plan">Turnierplan</button><button data-player-tab="alerts">Benachrichtigungen</button></div>
-    <div data-player-panel="group">${g?`<div class="card"><div class="section-head"><h3>Tabelle Gruppe ${gName}</h3><span class="badge">Board ${board}</span></div><div class="table-wrap"><table class="table player-table"><thead><tr><th>#</th><th>Spieler</th><th>Sp.</th><th>Siege</th><th>N.</th></tr></thead><tbody>${st.map((r,i)=>`<tr class="${r.id===p.id?'me':''}"><td>${i+1}</td><td><strong>${esc(playerName(getPlayer(r.id)))}</strong>${r.id===p.id?' <span class="badge badge-success">Du</span>':''}</td><td>${r.played}</td><td>${r.wins}</td><td>${r.losses}</td></tr>`).join('')}</tbody></table></div></div>`:'<div class="empty">Noch keine Gruppe ausgelost.</div>'}</div>
+    <div class="player-tabs tabs"><button class="active" data-player-tab="overview">Übersicht</button><button data-player-tab="group">Meine Gruppe</button><button data-player-tab="matches">Meine Spiele</button><button data-player-tab="plan">Turnierplan</button><button data-player-tab="alerts">Benachrichtigungen</button></div>
+    <div data-player-panel="overview">${renderPlayerDayOverview(p)}</div>
+    <div data-player-panel="group" hidden>${g?`<div class="card"><div class="section-head"><h3>Tabelle Gruppe ${gName}</h3><span class="badge">Board ${board}</span></div><div class="table-wrap"><table class="table player-table"><thead><tr><th>#</th><th>Spieler</th><th>Sp.</th><th>Siege</th><th>N.</th></tr></thead><tbody>${st.map((r,i)=>`<tr class="${r.id===p.id?'me':''}"><td>${i+1}</td><td><strong>${esc(playerName(getPlayer(r.id)))}</strong>${r.id===p.id?' <span class="badge badge-success">Du</span>':''}</td><td>${r.played}</td><td>${r.wins}</td><td>${r.losses}</td></tr>`).join('')}</tbody></table></div></div>`:'<div class="empty">Noch keine Gruppe ausgelost.</div>'}</div>
     <div data-player-panel="matches" hidden>${g?`<div class="card"><h3>Deine Gruppenspiele</h3>${myMatches.map((m,i)=>{const o=opponentFor(m,p.id); const result=m.status==='completed'?(m.winnerId===p.id?'<span class="badge badge-success">Sieg</span>':'<span class="badge badge-danger">Niederlage</span>'):m.status==='running'?'<span class="badge badge-success">läuft</span>':'<span class="badge badge-muted">offen</span>';return `<div class="player-line"><span><span class="muted">${i+1}.</span> gegen <strong>${esc(playerName(o))}</strong></span>${result}</div>`}).join('')}</div>`:'<div class="empty">Noch keine Spiele.</div>'}</div>
-    <div data-player-panel="plan" hidden><div class="card"><h3>Turnierplan</h3><p class="muted small">Hier kann der Spieler den gesamten Turnierverlauf sehen. Der KO-Baum füllt sich nach der Gruppenphase automatisch.</p>${renderCompactKnockout()}</div></div>
+    <div data-player-panel="plan" hidden>${renderPlayerFullPlan()}</div>
     <div data-player-panel="alerts" hidden><div class="card"><h3>Benachrichtigungen</h3><p class="muted">Diese Einstellungen simulieren bereits die spätere Spieler-App. Echte Push-Mitteilungen benötigen später das Online-Backend.</p>
       <label class="toggle-line"><input type="checkbox" data-player-pref="two" ${prefs.two?'checked':''}><span><strong>Noch 2 Spiele vor dir</strong><small>Frühe Erinnerung zum Bereitmachen.</small></span></label>
       <label class="toggle-line"><input type="checkbox" data-player-pref="next" ${prefs.next?'checked':''}><span><strong>Nach diesem Spiel bist du dran</strong><small>Du solltest jetzt zum Board gehen.</small></span></label>
       <label class="toggle-line"><input type="checkbox" data-player-pref="now" ${prefs.now?'checked':''}><span><strong>Du bist jetzt dran</strong><small>Dein Spiel ist aufgerufen.</small></span></label>
     </div></div>`;
+  }
+
+  function tournamentPhaseIndex(){
+    const phases=['Vorbereitung','Gruppenphase','Letzte 32','Achtelfinale','Viertelfinale','Halbfinale','Spiel um Platz 3','Finale','Abgeschlossen'];
+    const raw=state.tournament.phase||'Vorbereitung';
+    const i=phases.indexOf(raw);
+    if(i>=0) return i;
+    if(raw==='Ausgelost') return 0;
+    return state.tournament.finished?8:state.tournament.started?1:0;
+  }
+
+  function renderPhaseRail(compact=false){
+    const phases=['Check-in','Gruppen','Letzte 32','Achtelfinale','Viertelfinale','Halbfinale','Platz 3','Finale'];
+    const active=tournamentPhaseIndex();
+    const mapped=Math.min(7,Math.max(0,active));
+    return `<div class="phase-rail ${compact?'compact':''}">${phases.map((p,i)=>`<div class="phase-step ${i<mapped?'done':i===mapped?'active':''}"><span>${i<mapped?'✓':i+1}</span><strong>${p}</strong></div>`).join('')}</div>`;
+  }
+
+  function boardProgress(board){
+    const schedule=state.boardSchedules[board]||[];
+    const done=schedule.filter(id=>findMatch(id)?.status==='completed').length;
+    return {done,total:schedule.length,pct:pct(done,schedule.length)};
+  }
+
+  function statusBadgeForMatch(m){
+    if(!m) return '<span class="badge badge-muted">offen</span>';
+    if(m.status==='completed') return '<span class="badge badge-success">✓ gespielt</span>';
+    if(m.status==='running') return '<span class="badge badge-warning">▶ läuft</span>';
+    return '<span class="badge badge-muted">offen</span>';
+  }
+
+  function renderBoardSchedule(board,limit=null){
+    const schedule=state.boardSchedules[board]||[];
+    const ids=limit?schedule.slice(0,limit):schedule;
+    if(!schedule.length) return '<div class="empty">Noch kein Spielplan erzeugt.</div>';
+    return `<div class="schedule-list">${ids.map((id,i)=>{const m=findMatch(id); if(!m)return''; const a=getPlayer(m.playerA),b=getPlayer(m.playerB); return `<div class="schedule-row ${m.status}"><span class="schedule-no">${i+1}</span><span class="schedule-group">${m.type==='group'?`G${m.group}`:esc(m.round||'KO')}</span><span class="schedule-match"><strong>${esc(playerName(a))}</strong><span>–</span><strong>${esc(playerName(b))}</strong></span>${statusBadgeForMatch(m)}</div>`}).join('')}</div>${limit&&schedule.length>limit?`<div class="small muted" style="margin-top:8px">… plus ${schedule.length-limit} weitere Spiele</div>`:''}`;
+  }
+
+  function renderDayBoard(board){
+    const pr=boardProgress(board),cur=boardMatch(board,0),next=boardMatch(board,1);
+    return `<div class="card day-board-card"><div class="section-head"><div><h3>Board ${board}</h3><div class="small muted">Gruppen ${BOARD_GROUPS[board].join(' / ')}</div></div><span class="badge ${pr.done===pr.total&&pr.total?'badge-success':'badge-muted'}">${pr.done} / ${pr.total}</span></div><div class="progress"><span style="width:${pr.pct}%"></span></div><div class="day-current"><span class="small muted">Aktuell</span><strong>${cur?`${esc(playerName(getPlayer(cur.playerA)))} – ${esc(playerName(getPlayer(cur.playerB)))}`:'Keine offene Partie'}</strong>${cur?`<span class="small muted">Gruppe ${cur.group}${cur.status==='running'&&cur.startedAt?` · <span data-started-at="${cur.startedAt}">${elapsedText(cur.startedAt)}</span>`:''}</span>`:''}</div><div class="day-next"><span class="small muted">Danach</span><span>${next?`${esc(playerName(getPlayer(next.playerA)))} – ${esc(playerName(getPlayer(next.playerB)))} · G${next.group}`:'–'}</span></div><details class="schedule-details"><summary>Komplette Board-Reihenfolge anzeigen</summary>${renderBoardSchedule(board)}</details></div>`;
+  }
+
+  function renderGroupOverviewCard(g){
+    const gr=state.groups[g];
+    if(!gr) return '';
+    const st=standings(g),done=gr.matches.filter(m=>m.status==='completed').length;
+    return `<div class="group-summary"><div class="section-head"><div><strong>Gruppe ${g}</strong><div class="small muted">Board ${gr.board}</div></div><span class="badge ${done===10?'badge-success':'badge-muted'}">${done}/10</span></div><div class="mini-standing">${st.map((r,i)=>`<div><span>${i+1}. ${esc(playerName(getPlayer(r.id)))}</span><strong>${r.wins} S</strong></div>`).join('')}</div></div>`;
+  }
+
+  function renderDayPlan(){
+    if(!Object.keys(state.groups).length) return `<div class="empty">Bitte zuerst auslosen. Danach erscheint hier der komplette Spieltag.</div>`;
+    const matches=allGroupMatches(),done=matches.filter(m=>m.status==='completed').length,groupsDone=GROUPS.filter(groupComplete).length,qual=GROUPS.filter(g=>qualifier(g,1)&&qualifier(g,2)).length*2;
+    return `<div class="card day-hero"><div><div class="eyebrow">Gesamter Spieltag</div><h3>${esc(state.tournament.name)}</h3><p class="muted">Ohne feste Match-Uhrzeiten: Die Reihenfolge und der Live-Fortschritt sind maßgeblich.</p></div><div class="right"><div class="big-progress-number">${pct(done,matches.length||160)}%</div><div class="small muted">Gruppenphase</div></div></div>${renderPhaseRail()}
+    <div class="grid grid-4 day-metrics"><div class="card metric"><span class="label">Gruppenspiele</span><span class="value">${done}/160</span></div><div class="card metric"><span class="label">Gruppen fertig</span><span class="value">${groupsDone}/16</span></div><div class="card metric"><span class="label">KO-Plätze fest</span><span class="value">${qual}/32</span></div><div class="card metric"><span class="label">Phase</span><span class="value small-value">${esc(state.tournament.phase)}</span></div></div>
+    <div class="section-head day-section"><div><h3>Boards & Reihenfolge</h3><p class="small muted">Jedes Board zeigt den kompletten Ablauf. ✓ gespielt · ▶ läuft · offen.</p></div><button class="btn btn-secondary" data-goto="print">Pläne drucken</button></div><div class="day-board-grid">${Array.from({length:6},(_,i)=>renderDayBoard(i+1)).join('')}</div>
+    <div class="section-head day-section"><div><h3>Alle Gruppen</h3><p class="small muted">Live-Zwischenstand aller 16 Gruppen.</p></div></div><div class="all-groups-grid">${GROUPS.map(renderGroupOverviewCard).join('')}</div>
+    <div class="section-head day-section"><div><h3>KO-Phase</h3><p class="small muted">Der feste Baum füllt sich automatisch aus den Gruppenplätzen.</p></div></div>${renderKnockout()}`;
+  }
+
+  function renderPlayerDayOverview(p){
+    const matches=allGroupMatches(),done=matches.filter(m=>m.status==='completed').length;
+    return `<div class="card"><div class="section-head"><div><h3>Der ganze Spieltag</h3><p class="small muted">Live-Überblick über Phase, Boards und Turnierfortschritt.</p></div><span class="badge">${pct(done,matches.length||160)}% Gruppe</span></div>${renderPhaseRail(true)}<div class="player-board-strip">${Array.from({length:6},(_,i)=>{const b=i+1,c=boardMatch(b,0),n=boardMatch(b,1),pr=boardProgress(b);return `<div class="player-board-mini"><strong>Board ${b}</strong><span>${pr.done}/${pr.total}</span><small>${c?`${esc(getPlayer(c.playerA)?.firstName||'–')} – ${esc(getPlayer(c.playerB)?.firstName||'–')}`:'fertig / frei'}</small>${n?`<small class="muted">danach: ${esc(getPlayer(n.playerA)?.firstName||'–')} – ${esc(getPlayer(n.playerB)?.firstName||'–')}</small>`:''}</div>`}).join('')}</div></div>`;
+  }
+
+  function renderPlayerFullPlan(){
+    if(!Object.keys(state.groups).length) return '<div class="empty">Der Turnierplan ist noch nicht veröffentlicht.</div>';
+    return `<div class="card"><div class="section-head"><div><h3>Kompletter Turnierplan</h3><p class="small muted">Board-Zuordnung, alle Gruppen und KO-Baum.</p></div></div>${renderPhaseRail(true)}<div class="board-assignment-grid">${Array.from({length:6},(_,i)=>{const b=i+1;return `<div><strong>Board ${b}</strong><span>Gruppen ${BOARD_GROUPS[b].join(' / ')}</span></div>`}).join('')}</div></div><div class="section-head day-section"><h3>Alle Gruppen</h3></div><div class="all-groups-grid player-all-groups">${GROUPS.map(renderGroupOverviewCard).join('')}</div><div class="section-head day-section"><h3>KO-Baum</h3></div>${renderKnockout()}`;
+  }
+
+  function renderPrintCenter(){
+    if(!Object.keys(state.groups).length) return `<div class="empty">Bitte zuerst auslosen. Danach können die Pläne gedruckt werden.</div>`;
+    return `<div class="card print-intro"><div><div class="eyebrow">Druckzentrale</div><h3>Turnierpläne & Papier-Backup</h3><p class="muted">Jeder Button öffnet eine druckoptimierte Ansicht. Im Druckdialog kann auch „Als PDF speichern“ gewählt werden.</p></div></div><div class="print-grid"><button class="print-card" data-print="overall"><span class="print-icon">▤</span><strong>Gesamtturnierplan</strong><small>Gruppen, Boards, Reihenfolge und KO-Schema</small></button><button class="print-card" data-print="groups"><span class="print-icon">A–P</span><strong>Gruppenübersicht</strong><small>Alle Teilnehmer und Gruppentabellen</small></button><button class="print-card" data-print="ko"><span class="print-icon">KO</span><strong>KO-Baum</strong><small>Fester 32er-Baum zum Aushängen</small></button>${Array.from({length:6},(_,i)=>`<button class="print-card" data-print="board" data-print-board="${i+1}"><span class="print-icon">${i+1}</span><strong>Board ${i+1}</strong><small>${BOARD_GROUPS[i+1].map(g=>'Gruppe '+g).join(' · ')} · komplette Reihenfolge</small></button>`).join('')}</div><div class="notice" style="margin-top:18px">Tipp: Die Board-Pläne sind absichtlich funktional gehalten und enthalten große Felder für handschriftliche Ergebnisse. So könnt ihr bei einem Technikproblem sofort auf Papier weiterspielen.</div>`;
+  }
+
+  function printBaseCss(){
+    return `@page{size:A4;margin:12mm}*{box-sizing:border-box}body{font-family:Arial,sans-serif;color:#111;margin:0;font-size:11px}h1{font-size:22px;margin:0 0 3px}h2{font-size:16px;margin:18px 0 8px;border-bottom:2px solid #111;padding-bottom:4px}h3{font-size:13px;margin:12px 0 5px}.meta{color:#555;margin-bottom:14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.group{border:1px solid #888;padding:8px;break-inside:avoid}.group ol{margin:4px 0 0;padding-left:20px}.board-head{display:flex;justify-content:space-between;border-bottom:2px solid #111;padding-bottom:5px;margin-bottom:7px}.schedule{width:100%;border-collapse:collapse}.schedule th,.schedule td{border:1px solid #888;padding:6px 5px}.schedule th{background:#eee;text-align:left}.num{width:28px;text-align:center}.grp{width:48px}.result{width:90px}.ko{width:100%;border-collapse:collapse}.ko td,.ko th{border:1px solid #999;padding:5px}.muted{color:#666}.page-break{break-before:page}.board-map{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0}.board-map div{border:1px solid #999;padding:7px}.footer{margin-top:12px;color:#666;font-size:9px}.no-print{margin:0 0 10px;padding:8px;background:#eee;border:1px solid #bbb}@media print{.no-print{display:none}}`;
+  }
+
+  function printGroupHtml(g){
+    const gr=state.groups[g],st=standings(g);
+    return `<div class="group"><h3>Gruppe ${g} · Board ${gr.board}</h3><ol>${gr.playerIds.map(id=>`<li>${esc(playerName(getPlayer(id),true))}</li>`).join('')}</ol><div class="muted" style="margin-top:5px">Stand: ${st.map((r,i)=>`${i+1}. ${esc(playerName(getPlayer(r.id)))} (${r.wins} Siege)`).join(' · ')}</div></div>`;
+  }
+
+  function printBoardTable(board){
+    const schedule=state.boardSchedules[board]||[];
+    return `<div class="board-head"><div><h1>Board ${board}</h1><div>3. Alpirsbacher Steeldartscup · 16.01.2027</div></div><div><strong>${BOARD_GROUPS[board].map(g=>'Gruppe '+g).join(' / ')}</strong><br>501 Single Out · 1 Leg</div></div><table class="schedule"><thead><tr><th class="num">#</th><th class="grp">Gr.</th><th>Spieler A</th><th>Spieler B</th><th class="result">Ergebnis / Sieger</th></tr></thead><tbody>${schedule.map((id,i)=>{const m=findMatch(id),a=getPlayer(m.playerA),b=getPlayer(m.playerB);return `<tr><td class="num">${i+1}</td><td class="grp">${m.group}</td><td>${esc(playerName(a))}</td><td>${esc(playerName(b))}</td><td>${m.status==='completed'?`✓ ${esc(playerName(getPlayer(m.winnerId)))}`:'________________'}</td></tr>`}).join('')}</tbody></table><div class="footer">Digitaler und gedruckter Plan verwenden dieselbe Reihenfolge. Bei Ausfall Ergebnisse hier notieren und später im Nachtragen-Modus erfassen.</div>`;
+  }
+
+  function printKoHtml(){
+    return `<h2>Fester KO-Baum · Letzte 32</h2><table class="ko"><thead><tr><th>#</th><th>Begegnung</th><th>Format</th></tr></thead><tbody>${FIXED_R32.map((x,i)=>`<tr><td>${i+1}</td><td>${x[0]}${x[1]} – ${x[2]}${x[3]}</td><td>BO3 · 501 Double Out</td></tr>`).join('')}</tbody></table><h3>Weitere Runden</h3><p>Achtelfinale: BO3 · Viertelfinale: BO5 · Halbfinale: BO7 · Spiel um Platz 3: BO7 · Finale: BO9. Ab Halbfinale auf Board 4.</p>`;
+  }
+
+  function buildPrintDocument(type,board=null){
+    let body='';
+    if(type==='board') body=printBoardTable(board);
+    else if(type==='groups') body=`<h1>Gruppenübersicht</h1><div class="meta">3. Alpirsbacher Steeldartscup · 16.01.2027</div><div class="grid">${GROUPS.map(printGroupHtml).join('')}</div>`;
+    else if(type==='ko') body=`<h1>KO-Baum</h1><div class="meta">3. Alpirsbacher Steeldartscup · 16.01.2027</div>${printKoHtml()}`;
+    else body=`<h1>3. Alpirsbacher Steeldartscup</h1><div class="meta">Turnierplan · 16.01.2027 · 80 Einzelspieler · 6 Boards</div><h2>Board-Zuordnung</h2><div class="board-map">${Array.from({length:6},(_,i)=>`<div><strong>Board ${i+1}</strong><br>Gruppen ${BOARD_GROUPS[i+1].join(' / ')}</div>`).join('')}</div><h2>Gruppen</h2><div class="grid">${GROUPS.map(printGroupHtml).join('')}</div><div class="page-break"></div><h1>Board-Spielreihenfolge</h1>${Array.from({length:6},(_,i)=>`<div class="${i?'page-break':''}">${printBoardTable(i+1)}</div>`).join('')}<div class="page-break"></div><h1>KO-Phase</h1>${printKoHtml()}`;
+    return `<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Steeldartscup – Druck</title><style>${printBaseCss()}</style></head><body><div class="no-print">Druckansicht · Im Browser „Drucken“ wählen oder als PDF speichern.</div>${body}</body></html>`;
+  }
+
+  function openPrint(type,board=null){
+    const w=window.open('','_blank');
+    if(!w) return toast('Druckfenster wurde vom Browser blockiert. Pop-ups für diese Seite erlauben.','warning');
+    w.document.open(); w.document.write(buildPrintDocument(type,board)); w.document.close();
+    setTimeout(()=>{w.focus();w.print();},250);
   }
 
   function renderCompactKnockout(){
@@ -815,7 +933,7 @@ button{cursor:pointer}
       <div class="board-grid">${boards}</div>
       <div class="grid grid-2" style="margin-top:18px">
         <div class="card"><h3>Hinweise</h3>${warnings.length?warnings.map(w=>`<div class="notice warning" style="margin-bottom:8px">⚠ ${w}</div>`).join(''):`<div class="notice success">Aktuell keine kritischen Hinweise.</div>`}</div>
-        <div class="card"><h3>Kurzaktionen</h3><div class="actions"><button class="btn btn-secondary" data-goto="checkin">Check-in öffnen</button><button class="btn btn-secondary" data-goto="draw">Auslosung</button><button class="btn btn-secondary" data-goto="beamer">Beamer öffnen</button></div><p class="muted small" style="margin-bottom:0">Die zwei Turnierleiter können dieselbe Verwaltungsansicht benutzen. Eine echte Mehrbenutzer-Synchronisierung kommt mit dem Server-Backend.</p></div>
+        <div class="card"><h3>Kurzaktionen</h3><div class="actions"><button class="btn btn-secondary" data-goto="dayplan">Gesamtplan</button><button class="btn btn-secondary" data-goto="checkin">Check-in öffnen</button><button class="btn btn-secondary" data-goto="draw">Auslosung</button><button class="btn btn-secondary" data-goto="print">Drucken / PDF</button><button class="btn btn-secondary" data-goto="beamer">Beamer öffnen</button></div><p class="muted small" style="margin-bottom:0">Die zwei Turnierleiter können dieselbe Verwaltungsansicht benutzen. Eine echte Mehrbenutzer-Synchronisierung kommt mit dem Server-Backend.</p></div>
       </div>`;
   }
 
@@ -972,6 +1090,8 @@ button{cursor:pointer}
     document.getElementById('counterScoreInput')?.addEventListener('keydown',e=>{if(e.key==='Enter'){const btn=document.querySelector('[data-counter-submit]');if(btn)addCounterVisit(Number(btn.dataset.board),btn.dataset.counterSubmit,e.currentTarget.value);}});
     document.querySelectorAll('[data-undo-visit]').forEach(b=>b.onclick=()=>undoCounterVisit(b.dataset.undoVisit));
     document.querySelectorAll('[data-undo-board]').forEach(b=>b.onclick=()=>{if(confirm('Das unmittelbar letzte Ergebnis dieses Boards wirklich zurücksetzen?'))undoLastBoardResult(Number(b.dataset.undoBoard));});
+
+    document.querySelectorAll('[data-print]').forEach(b=>b.onclick=()=>openPrint(b.dataset.print,b.dataset.printBoard?Number(b.dataset.printBoard):null));
 
     document.getElementById('fakeSyncBtn')?.addEventListener('click',()=>toast('Demo-Sync ausgeführt – keine externen Änderungen vorhanden.'));
   }

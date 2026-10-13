@@ -1,17 +1,14 @@
-# Alpirsbacher Steeldartscup – Prototyp v6
+# Alpirsbacher Steeldartscup – v7
 
-Testversion der Turniersoftware für den 3. Alpirsbacher Steeldartscup am 16.01.2027.
+GitHub-Pages-Testversion der Turniersoftware.
 
-## Neu in v6
+## Neu in v7
+- Gesamtübersicht „Turnierplan“ für die Turnierleitung
+- kompletter Board-Ablauf mit Live-Fortschritt und Status
+- Übersicht aller 16 Gruppen
+- erweiterte Spieleransicht mit Spieltagsübersicht
+- Druckzentrale für Gesamtplan, Gruppen, KO-Baum und Board 1–6
+- druckoptimierte Board-Pläne als Papier-Backup
 
-- Schreiber-Counter für Tablet/iPad optimiert
-- Dart-für-Dart-Eingabe über Single / Double / Triple + 1–20
-- eigene Tasten für 25, Bull 50 und Miss
-- automatische Berechnung von Aufnahme und Restscore
-- automatische Bust-Erkennung
-- Double-Out ab der KO-Phase
-- Finish-Vorschläge bis 170 Rest, die sich nach jedem Dart aktualisieren
-- Dart zurücknehmen und letzte Aufnahme zurücknehmen
-- Gesamtpunkt-Eingabe bleibt als optionale Alternative erhalten
-
-Für GitHub Pages muss `index.html` direkt im Hauptverzeichnis liegen.
+## GitHub Pages
+`index.html` direkt in das Hauptverzeichnis des Repositories laden.
