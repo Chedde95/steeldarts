@@ -1,24 +1,17 @@
-# 3. Alpirsbacher Steeldartscup – Turniersoftware
+# Alpirsbacher Steeldartscup – Prototyp v6
 
-Prototyp/MVP der Turniersoftware für den 16.01.2027.
+Testversion der Turniersoftware für den 3. Alpirsbacher Steeldartscup am 16.01.2027.
 
-## GitHub Pages
+## Neu in v6
 
-Für den aktuellen Stand wird nur `index.html` benötigt. Die komplette Oberfläche, Logik und das Styling sind darin enthalten.
+- Schreiber-Counter für Tablet/iPad optimiert
+- Dart-für-Dart-Eingabe über Single / Double / Triple + 1–20
+- eigene Tasten für 25, Bull 50 und Miss
+- automatische Berechnung von Aufnahme und Restscore
+- automatische Bust-Erkennung
+- Double-Out ab der KO-Phase
+- Finish-Vorschläge bis 170 Rest, die sich nach jedem Dart aktualisieren
+- Dart zurücknehmen und letzte Aufnahme zurücknehmen
+- Gesamtpunkt-Eingabe bleibt als optionale Alternative erhalten
 
-### GitHub Pages aktivieren
-
-1. Repository öffnen
-2. `Settings` → `Pages`
-3. Unter `Build and deployment`:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/(root)`
-4. Speichern
-5. Den unter `Your site is live at ...` angezeigten Link öffnen
-
-Die richtige Version zeigt in der Anwendung `v5-counter`.
-
-## Hinweis
-
-Dieser Stand ist ein Browser-Prototyp. Die Daten werden lokal im Browser gespeichert und noch nicht zwischen mehreren Geräten synchronisiert. Die spätere Produktionsversion erhält Backend, Datenbank, Live-Synchronisierung, echte Rollen/Zugänge, Push-Benachrichtigungen und die Anbindung an die separate Anmeldung.
+Für GitHub Pages muss `index.html` direkt im Hauptverzeichnis liegen.
