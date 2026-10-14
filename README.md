@@ -1,11 +1,17 @@
-# 3. Alpirsbacher Steeldartscup – v13 OBS Overlay
+# 3. Alpirsbacher Steeldartscup – v14 Broadcast Overlay
 
-Prototype der Turniersoftware. Neu in v13: OBS-Overlay für Hauptboard 4.
+Diese Version erweitert das OBS-Modul um einen eigenständigen Broadcast-Look.
 
-- Turnierleitung: neuer Menüpunkt **OBS Overlay**
-- Vorschau des TV-Scoreboards
-- eigener transparenter Browser-Source-Tab für OBS
-- Score, Legs, Rest, aktiver Spieler, Runde/BO und Finish-Hinweis
-- Live-Aktualisierung aus demselben lokalen Counter-Stand
+## Neu
+- drei Overlay-Designs: Broadcast Gold, Clean Blue, Arena Red
+- Position unten links oder unten rechts
+- animierte Einblendung
+- Live-Puls und aktive-Spieler-Markierung
+- Spielername + optional Dartname
+- Legs, Restscore und Checkout-Hinweis
+- Runde / Best-of-Anzeige
+- Standby-Grafik zwischen Matches
+- frei änderbares Overlay-Kürzel
+- OBS-Ansicht aktualisiert nur bei echten Datenänderungen
 
-Hinweis: Im statischen GitHub-Pages-Prototyp ist der Overlay-Link noch nicht sicher geschützt. In der produktiven Serverversion wird der Zugriff ausschließlich über Turnierleitungs-Login bzw. einen generierten OBS-Token möglich sein.
+Für GitHub Pages genügt `index.html` im Root des Repositories.

@@ -155,37 +155,32 @@ button{cursor:pointer}
 
 
 
-/* v13 OBS overlay */
-.overlay-admin-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);gap:16px;align-items:start}
-.overlay-preview{position:relative;aspect-ratio:16/9;min-height:360px;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#15191f,#080a0d 62%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}
+/* v14 Broadcast / OBS overlay */
+.overlay-admin-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(290px,.55fr);gap:16px;align-items:start}
+.overlay-preview{position:relative;aspect-ratio:16/9;min-height:390px;border:1px solid var(--border);border-radius:18px;overflow:hidden;background:radial-gradient(circle at 70% 20%,#29303a 0,#11161c 38%,#07090c 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.02)}
 .overlay-preview::before{content:'KAMERA / OBS VORSCHAU';position:absolute;top:18px;right:18px;font-size:11px;letter-spacing:.16em;color:#8a929d}
-.obs-scoreboard{position:absolute;left:3.2%;bottom:4.6%;width:min(640px,62vw);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff;filter:drop-shadow(0 10px 24px rgba(0,0,0,.38))}
-.obs-eventbar{display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(14,17,21,.95);padding:9px 13px;border-radius:9px 9px 0 0;border-bottom:1px solid rgba(255,255,255,.13);font-size:13px;font-weight:750;letter-spacing:.02em}
-.obs-eventbar .obs-round{color:#f0b94e;white-space:nowrap}
-.obs-player-row{display:grid;grid-template-columns:18px minmax(0,1fr) 58px 82px;align-items:stretch;background:rgba(245,247,250,.96);color:#101215;border-bottom:1px solid #cdd2d8;min-height:64px}
-.obs-player-row:last-of-type{border-radius:0 0 9px 9px;border-bottom:0}
-.obs-player-row.active{background:#fff}
-.obs-active-marker{display:flex;align-items:center;justify-content:center;background:#21262d;color:transparent;font-size:13px}
-.obs-player-row.active .obs-active-marker{background:#d89e28;color:#111}
-.obs-player-name{padding:9px 12px;display:flex;flex-direction:column;justify-content:center;min-width:0}
-.obs-player-name strong{font-size:19px;line-height:1.08;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.obs-player-name span{font-size:11px;color:#68707a;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.obs-cell{display:flex;align-items:center;justify-content:center;border-left:1px solid #d4d8dd;font-weight:900;font-variant-numeric:tabular-nums}
-.obs-legs{font-size:25px;background:#eceff2}
-.obs-rest{font-size:31px;background:#fff}
-.obs-player-row.active .obs-rest{background:#fff9e8}
-.obs-finishbar{display:flex;justify-content:space-between;gap:14px;margin-top:7px;padding:7px 11px;border-radius:7px;background:rgba(14,17,21,.92);font-size:12px;color:#d8dde4}
-.obs-finishbar strong{color:#f3c55d}
-.obs-standby{padding:18px 20px;border-radius:12px;background:rgba(14,17,21,.94);border-left:5px solid #d89e28;color:white}
-.obs-standby strong{display:block;font-size:24px;margin:3px 0}.obs-standby span{color:#aeb6c0}
-.obs-mode{margin:0!important;background:transparent!important;overflow:hidden!important}
-.obs-mode .app-shell,.obs-mode #modalRoot,.obs-mode #toastRoot{display:none!important}
-#obsRoot{position:fixed;inset:0;background:transparent;overflow:hidden}
-#obsRoot .obs-stage{position:absolute;inset:0;background:transparent}
-#obsRoot .obs-scoreboard{left:42px;bottom:42px;width:620px}
-.obs-security-note{border:1px solid #443a20;background:#1d1a12;color:#e8d09a;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.5}
-.obs-specs{display:grid;grid-template-columns:1fr 1fr;gap:9px}.obs-spec{padding:11px;border:1px solid var(--border);border-radius:12px;background:var(--panel-2)}.obs-spec strong{display:block;font-size:16px}.obs-spec span{font-size:11px;color:var(--muted)}
-@media(max-width:1000px){.overlay-admin-grid{grid-template-columns:1fr}.overlay-preview{min-height:300px}.obs-scoreboard{width:76vw}.obs-player-row{grid-template-columns:16px minmax(0,1fr) 52px 72px}.obs-player-name strong{font-size:16px}.obs-rest{font-size:27px}}
+.overlay-control-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.overlay-control-grid label{display:flex;flex-direction:column;gap:5px;font-size:11px;color:var(--muted)}
+.obs-scoreboard{--obs-accent:#e5aa34;--obs-accent-2:#ffd875;--obs-dark:#101419;--obs-panel:#f7f8fa;--obs-line:#d8dde3;position:absolute;left:3.2%;bottom:4.6%;width:min(690px,66vw);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff;filter:drop-shadow(0 15px 30px rgba(0,0,0,.42));transform-origin:left bottom}
+.obs-scoreboard.obs-animate{animation:obsEnter .55s cubic-bezier(.16,.84,.24,1) both}.obs-scoreboard.position-right{left:auto;right:3.2%;transform-origin:right bottom}.obs-scoreboard.position-right.obs-animate{animation-name:obsEnterRight}
+.obs-shell{border-radius:13px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.16),0 12px 36px rgba(0,0,0,.36)}
+.obs-topline{height:4px;background:linear-gradient(90deg,var(--obs-accent),var(--obs-accent-2),var(--obs-accent))}
+.obs-eventbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:11px;background:linear-gradient(90deg,rgba(11,14,18,.98),rgba(25,29,35,.98));padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;font-weight:760;letter-spacing:.025em}
+.obs-brandmark{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,var(--obs-accent-2),var(--obs-accent));color:#16130b;font-size:12px;font-weight:950;letter-spacing:-.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+.obs-event-copy{min-width:0}.obs-event-copy strong{display:block;font-size:13px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.obs-event-copy span{display:block;margin-top:3px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#aeb6c0}
+.obs-round-block{text-align:right;white-space:nowrap}.obs-round-block strong{display:block;color:var(--obs-accent-2);font-size:12px}.obs-round-block span{font-size:9px;color:#9fa8b3;letter-spacing:.12em}
+.obs-label-row{display:grid;grid-template-columns:22px minmax(0,1fr) 62px 92px;background:#242a31;color:#c6cdd5;font-size:9px;letter-spacing:.13em;text-transform:uppercase}.obs-label-row span{padding:5px 9px}.obs-label-row span:nth-child(3),.obs-label-row span:nth-child(4){text-align:center;border-left:1px solid rgba(255,255,255,.07)}
+.obs-player-row{display:grid;grid-template-columns:22px minmax(0,1fr) 62px 92px;align-items:stretch;background:rgba(247,248,250,.985);color:#0e1115;border-bottom:1px solid var(--obs-line);min-height:67px;transition:background .22s ease,transform .22s ease}
+.obs-player-row.active{background:#fff}.obs-player-row:last-of-type{border-bottom:0}
+.obs-active-marker{position:relative;display:flex;align-items:center;justify-content:center;background:#252b32;color:transparent;font-size:10px}.obs-player-row.active .obs-active-marker{background:var(--obs-accent);color:#16130b}.obs-player-row.active .obs-active-marker::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.35);animation:obsPulse 1.55s ease-in-out infinite}
+.obs-player-name{padding:9px 13px;display:flex;flex-direction:column;justify-content:center;min-width:0}.obs-player-name strong{font-size:20px;line-height:1.08;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.obs-player-name span{font-size:10px;color:#68717b;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.02em}.obs-player-row.active .obs-player-name span{color:#7a5a13}
+.obs-cell{display:flex;align-items:center;justify-content:center;border-left:1px solid var(--obs-line);font-weight:900;font-variant-numeric:tabular-nums}.obs-legs{font-size:26px;background:#edf0f3}.obs-rest{font-size:33px;background:#fff;letter-spacing:-.035em}.obs-player-row.active .obs-rest{background:linear-gradient(180deg,#fffef8,#fff6da);color:#111}
+.obs-finishbar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:7px 11px;background:rgba(12,15,19,.97);font-size:10px;color:#cbd1d8;letter-spacing:.035em}.obs-finishbar .live-dot{width:7px;height:7px;border-radius:50%;background:#ef4e4e;box-shadow:0 0 0 4px rgba(239,78,78,.13);animation:obsLive 1.4s ease-in-out infinite}.obs-finishbar .finish-copy{text-align:center}.obs-finishbar strong{color:var(--obs-accent-2);font-size:12px}.obs-finishbar .legscore{white-space:nowrap;font-weight:850;color:#fff}
+.obs-standby{min-width:500px;border-radius:13px;overflow:hidden;background:rgba(13,17,22,.97);color:white;box-shadow:0 0 0 1px rgba(255,255,255,.14),0 14px 38px rgba(0,0,0,.4)}.obs-standby-top{height:4px;background:linear-gradient(90deg,var(--obs-accent),var(--obs-accent-2))}.obs-standby-body{display:grid;grid-template-columns:58px 1fr;gap:14px;padding:16px 18px;align-items:center}.obs-standby .obs-brandmark{width:58px;height:58px;border-radius:14px;font-size:17px}.obs-standby span{color:#aeb6c0;font-size:11px;letter-spacing:.06em;text-transform:uppercase}.obs-standby strong{display:block;font-size:24px;margin:3px 0}.obs-standby em{font-style:normal;color:var(--obs-accent-2);font-size:12px}
+.obs-theme-clean{--obs-accent:#58c4ff;--obs-accent-2:#a6e4ff;--obs-dark:#101419}.obs-theme-clean .obs-eventbar{background:rgba(12,17,23,.96)}.obs-theme-clean .obs-brandmark{color:#07131a}.obs-theme-arena{--obs-accent:#e34b4b;--obs-accent-2:#ff9191}.obs-theme-arena .obs-eventbar{background:linear-gradient(90deg,rgba(31,8,9,.98),rgba(22,17,20,.98))}
+.obs-mode{margin:0!important;background:transparent!important;overflow:hidden!important}.obs-mode .app-shell,.obs-mode #modalRoot,.obs-mode #toastRoot{display:none!important}#obsRoot{position:fixed;inset:0;background:transparent;overflow:hidden}#obsRoot .obs-stage{position:absolute;inset:0;background:transparent}#obsRoot .obs-scoreboard{left:42px;bottom:42px;width:650px}#obsRoot .obs-scoreboard.position-right{left:auto;right:42px}
+.obs-security-note{border:1px solid #443a20;background:#1d1a12;color:#e8d09a;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.5}.obs-specs{display:grid;grid-template-columns:1fr 1fr;gap:9px}.obs-spec{padding:11px;border:1px solid var(--border);border-radius:12px;background:var(--panel-2)}.obs-spec strong{display:block;font-size:16px}.obs-spec span{font-size:11px;color:var(--muted)}
+@keyframes obsEnter{from{opacity:0;transform:translateX(-44px) scale(.97)}to{opacity:1;transform:none}}@keyframes obsEnterRight{from{opacity:0;transform:translateX(44px) scale(.97)}to{opacity:1;transform:none}}@keyframes obsPulse{0%,100%{opacity:0}50%{opacity:.45}}@keyframes obsLive{0%,100%{opacity:.45;transform:scale(.82)}50%{opacity:1;transform:scale(1)}}
+@media(max-width:1000px){.overlay-admin-grid{grid-template-columns:1fr}.overlay-preview{min-height:320px}.obs-scoreboard{width:78vw}.obs-player-row,.obs-label-row{grid-template-columns:18px minmax(0,1fr) 54px 76px}.obs-player-name strong{font-size:16px}.obs-rest{font-size:27px}.overlay-control-grid{grid-template-columns:1fr}}
 
 </style>
 </head>
@@ -227,7 +222,7 @@ button{cursor:pointer}
               <button type="button" data-test-mode="beamer">Beamer</button>
             </div>
           </div>
-          <span class="badge badge-muted" title="Build-Version">v13-obs-overlay</span>
+          <span class="badge badge-muted" title="Build-Version">v14-broadcast-overlay</span>
           <span id="publishBadge" class="badge badge-muted">Nicht veröffentlicht</span>
           <span id="phaseBadge" class="badge">Vorbereitung</span>
         </div>
@@ -1169,17 +1164,37 @@ button{cursor:pointer}
     return assignedNext||null;
   }
 
+  function overlayConfig(){
+    state.tournament.overlayConfig ||= {theme:'gold',position:'left',animations:true,brand:'ASC 2027'};
+    return state.tournament.overlayConfig;
+  }
+
   function obsOverlayUrl(){
+    const cfg=overlayConfig();
     const u=new URL(window.location.href);
     u.search='';u.hash='';
     u.searchParams.set('obs','board4');
     u.searchParams.set('token','demo-admin');
+    u.searchParams.set('theme',cfg.theme||'gold');
+    u.searchParams.set('position',cfg.position||'left');
     return u.toString();
   }
 
-  function renderObsScoreboard(m){
+  function overlayThemeClass(theme){
+    if(theme==='clean') return 'obs-theme-clean';
+    if(theme==='arena') return 'obs-theme-arena';
+    return 'obs-theme-gold';
+  }
+
+  function renderObsScoreboard(m,opts={}){
+    const cfg=overlayConfig();
+    const theme=opts.theme||cfg.theme||'gold';
+    const position=opts.position||cfg.position||'left';
+    const animate=opts.animate ?? cfg.animations!==false;
+    const cls=`obs-scoreboard ${overlayThemeClass(theme)} ${position==='right'?'position-right':''} ${animate?'obs-animate':''}`;
+    const brand=esc(cfg.brand||'ASC 2027');
     if(!m || !m.playerA || !m.playerB){
-      return `<div class="obs-scoreboard"><div class="obs-standby"><span>3. Alpirsbacher Steeldartscup · Board 4</span><strong>Übertragung bereit</strong><span>Noch kein aktives Match auf dem Hauptboard.</span></div></div>`;
+      return `<div class="${cls}"><div class="obs-standby"><div class="obs-standby-top"></div><div class="obs-standby-body"><div class="obs-brandmark">ASC</div><div><span>${esc(state.tournament.name)} · Center Board</span><strong>Übertragung bereit</strong><em>Das nächste Match erscheint automatisch.</em></div></div></div></div>`;
     }
     const a=getPlayer(m.playerA),b=getPlayer(m.playerB),rules=matchRules(m),c=m.counter||null;
     const remA=c?.remainingA??501,remB=c?.remainingB??501,legsA=c?.legsA??m.scoreA??0,legsB=c?.legsB??m.scoreB??0;
@@ -1189,32 +1204,52 @@ button{cursor:pointer}
     const activeRest=active===m.playerA?remA:active===m.playerB?remB:null;
     const finish=activeRest!=null?finishSuggestion(activeRest,rules):'';
     const status=m.status==='running'?'LIVE':m.status==='completed'?'ENDE':'ALS NÄCHSTES';
-    const row=(p,legs,rest,id)=>`<div class="obs-player-row ${active===id?'active':''}"><div class="obs-active-marker">▶</div><div class="obs-player-name"><strong>${esc(`${p.firstName} ${p.lastName}`)}</strong><span>${p.dartName?`„${esc(p.dartName)}“ · `:''}${active===id?'am Wurf':' '}</span></div><div class="obs-cell obs-legs">${legs}</div><div class="obs-cell obs-rest">${rest}</div></div>`;
-    return `<div class="obs-scoreboard"><div class="obs-eventbar"><span>${esc(state.tournament.name)}</span><span class="obs-round">${esc(round)} · ${fmt} · ${status}</span></div>${row(a,legsA,remA,m.playerA)}${row(b,legsB,remB,m.playerB)}<div class="obs-finishbar"><span>LEGS <strong>${legsA}:${legsB}</strong></span><span>${rules.checkout==='double'&&finish?`Finish · <strong>${esc(finish)}</strong>`:`501 ${esc(rules.label)}`}</span></div></div>`;
+    const row=(p,legs,rest,id)=>`<div class="obs-player-row ${active===id?'active':''}"><div class="obs-active-marker">▶</div><div class="obs-player-name"><strong>${esc(`${p.firstName} ${p.lastName}`)}</strong><span>${p.dartName?`„${esc(p.dartName)}“`:active===id?'AM WURF':' '}</span></div><div class="obs-cell obs-legs">${legs}</div><div class="obs-cell obs-rest">${rest}</div></div>`;
+    return `<div class="${cls}"><div class="obs-shell"><div class="obs-topline"></div><div class="obs-eventbar"><div class="obs-brandmark">${brand}</div><div class="obs-event-copy"><strong>${esc(state.tournament.name)}</strong><span>Center Board · Alpirsbach</span></div><div class="obs-round-block"><strong>${esc(round)}</strong><span>${fmt} · ${status}</span></div></div><div class="obs-label-row"><span></span><span>Spieler</span><span>Legs</span><span>Rest</span></div>${row(a,legsA,remA,m.playerA)}${row(b,legsB,remB,m.playerB)}<div class="obs-finishbar"><span class="live-dot"></span><span class="finish-copy">${rules.checkout==='double'&&finish?`Checkout <strong>${esc(finish)}</strong>`:`501 ${esc(rules.label)}`}</span><span class="legscore">LEGS ${legsA}:${legsB}</span></div></div></div>`;
   }
 
   function renderObsAdmin(){
-    const m=overlayMatch(4),url=obsOverlayUrl();
-    return `<div class="section-head"><div><h3>OBS Overlay · Hauptboard 4</h3><p class="muted">Die Grafik liest dieselben Scores wie der Schreiber-Counter. Es gibt keine zweite Ergebniseingabe.</p></div><span class="badge badge-warning">Turnierleitung</span></div>
+    const m=overlayMatch(4),cfg=overlayConfig();
+    return `<div class="section-head"><div><h3>OBS Overlay · Hauptboard 4</h3><p class="muted">Broadcast-Grafik mit Live-Scores direkt aus dem Schreiber-Counter.</p></div><span class="badge badge-warning">Turnierleitung</span></div>
       <div class="overlay-admin-grid">
-        <div class="card"><div class="overlay-preview">${renderObsScoreboard(m)}</div><div class="actions" style="margin-top:14px"><button class="btn" id="openObsOverlayBtn">Overlay in neuem Tab öffnen</button><button class="btn btn-secondary" id="copyObsOverlayBtn">Demo-URL kopieren</button></div><p class="small muted" style="margin-bottom:0">In OBS später als <strong>Browser-Quelle</strong> einfügen. Empfohlene Größe: 1920 × 1080. Der Hintergrund der Overlay-Seite ist transparent.</p></div>
-        <div class="stack"><div class="card"><h3>Übertragungsstatus</h3><div class="obs-specs"><div class="obs-spec"><strong>Board 4</strong><span>Haupt-/Kameraboard</span></div><div class="obs-spec"><strong>${m?.status==='running'?'LIVE':'Bereit'}</strong><span>${m?esc(m.type==='ko'?m.round:`Gruppe ${m.group}`):'kein Match aktiv'}</span></div><div class="obs-spec"><strong>Live-Scores</strong><span>direkt aus dem Counter</span></div><div class="obs-spec"><strong>Transparent</strong><span>für OBS Browser Source</span></div></div></div>
-        <div class="obs-security-note"><strong>Zugriffsschutz:</strong> Im statischen GitHub-Prototyp ist das nur eine Demo und technisch noch nicht sicher geschützt. In der echten Serverversion kann ausschließlich die Turnierleitung einen Overlay-Link/Token erzeugen. Spieler- und öffentliche Ansichten erhalten keinen Zugriff auf diese Route.</div>
-        <div class="card"><h3>Geplant für die echte Version</h3><p class="small muted">Automatisch ab Viertel-/Halbfinale nutzbar, Spielername + Dartname, Legs, Restscore, aktiver Spieler, Finishweg, Runde/BO sowie ein Standby- bzw. „Als Nächstes“-Bild zwischen den Matches.</p></div></div>
+        <div class="card"><div class="overlay-preview">${renderObsScoreboard(m,{animate:true})}</div>
+          <div class="overlay-control-grid">
+            <label>Design<select class="select" id="obsThemeSelect"><option value="gold" ${cfg.theme==='gold'?'selected':''}>Broadcast Gold</option><option value="clean" ${cfg.theme==='clean'?'selected':''}>Clean Blue</option><option value="arena" ${cfg.theme==='arena'?'selected':''}>Arena Red</option></select></label>
+            <label>Position<select class="select" id="obsPositionSelect"><option value="left" ${cfg.position!=='right'?'selected':''}>Unten links</option><option value="right" ${cfg.position==='right'?'selected':''}>Unten rechts</option></select></label>
+            <label>Overlay-Kürzel<input class="input" id="obsBrandInput" maxlength="12" value="${esc(cfg.brand||'ASC 2027')}"></label>
+            <label>Animation<select class="select" id="obsAnimationSelect"><option value="on" ${cfg.animations!==false?'selected':''}>Einblendungen an</option><option value="off" ${cfg.animations===false?'selected':''}>Animationen aus</option></select></label>
+          </div>
+          <div class="actions" style="margin-top:14px"><button class="btn" id="openObsOverlayBtn">Overlay in neuem Tab öffnen</button><button class="btn btn-secondary" id="copyObsOverlayBtn">OBS-Link kopieren</button><button class="btn btn-ghost" id="obsReplayAnimationBtn">Animation testen</button></div>
+          <p class="small muted" style="margin-bottom:0">Für OBS: Browser-Quelle, 1920 × 1080, transparenter Hintergrund. Spielerwechsel, Legs, Restscore und Checkout-Hinweis kommen automatisch aus Board 4.</p></div>
+        <div class="stack"><div class="card"><h3>Übertragungsstatus</h3><div class="obs-specs"><div class="obs-spec"><strong>Board 4</strong><span>Center-/Kameraboard</span></div><div class="obs-spec"><strong>${m?.status==='running'?'LIVE':'Bereit'}</strong><span>${m?esc(m.type==='ko'?m.round:`Gruppe ${m.group}`):'kein Match aktiv'}</span></div><div class="obs-spec"><strong>3 Designs</strong><span>live umschaltbar</span></div><div class="obs-spec"><strong>Live-Scores</strong><span>kein zweiter Operator</span></div></div></div>
+        <div class="card"><h3>Broadcast-Elemente</h3><p class="small muted">Bereits enthalten: animierte Einblendung, aktiver Spieler, Dartname, Legs, Restscore, Checkout-Weg, Runde/BO und Standby-Karte. In der echten Version ergänzen wir Logo-Upload, Sponsorenflächen sowie Leg-/Matchgewinn-Animationen mit kontrollierter Dauer.</p></div>
+        <div class="obs-security-note"><strong>Zugriffsschutz:</strong> In der echten Serverversion ist das Overlay nicht öffentlich. Nur die Turnierleitung erzeugt einen zeitlich bzw. turnierbezogen gültigen OBS-Link/Token.</div></div>
       </div>`;
   }
 
-  function renderObsStandalone(){
+  function renderObsStandalone(forceAnimate=false){
     let root=document.getElementById('obsRoot');
     if(!root){root=document.createElement('div');root.id='obsRoot';document.body.appendChild(root);}
-    root.innerHTML=`<div class="obs-stage">${renderObsScoreboard(overlayMatch(4))}</div>`;
+    const params=new URLSearchParams(location.search),cfg=overlayConfig();
+    const theme=params.get('theme')||cfg.theme||'gold';
+    const position=params.get('position')||cfg.position||'left';
+    root.innerHTML=`<div class="obs-stage">${renderObsScoreboard(overlayMatch(4),{theme,position,animate:forceAnimate||cfg.animations!==false})}</div>`;
+  }
+
+  function obsStateSignature(){
+    const m=overlayMatch(4),cfg=overlayConfig();
+    if(!m) return JSON.stringify({none:true,cfg});
+    const c=m.counter||{};
+    return JSON.stringify({id:m.id,status:m.status,a:m.playerA,b:m.playerB,ra:c.remainingA,rb:c.remainingB,la:c.legsA??m.scoreA,lb:c.legsB??m.scoreB,turn:c.currentPlayerId,round:m.round,group:m.group,cfg});
   }
 
   function startObsStandalone(){
     document.body.classList.add('obs-mode');
-    renderObsStandalone();
-    window.addEventListener('storage',e=>{if(e.key===STORAGE_KEY){state=loadState();renderObsStandalone();}});
-    setInterval(()=>{state=loadState();renderObsStandalone();},1000);
+    let last='';
+    const sync=()=>{state=loadState();const sig=obsStateSignature();if(sig!==last){last=sig;renderObsStandalone(true);}};
+    sync();
+    window.addEventListener('storage',e=>{if(e.key===STORAGE_KEY)sync();});
+    setInterval(sync,700);
   }
 
   function renderSync(){
@@ -1226,6 +1261,16 @@ button{cursor:pointer}
     document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>{currentView=b.dataset.goto;render();});
     document.getElementById('openObsOverlayBtn')?.addEventListener('click',()=>window.open(obsOverlayUrl(),'steeldarts-obs-overlay','noopener'));
     document.getElementById('copyObsOverlayBtn')?.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(obsOverlayUrl());toast('Overlay-Demo-URL kopiert.');}catch(_){prompt('Overlay-Demo-URL kopieren:',obsOverlayUrl());}});
+    document.getElementById('obsThemeSelect')?.addEventListener('change',e=>{overlayConfig().theme=e.target.value;saveState();render();});
+    document.getElementById('obsPositionSelect')?.addEventListener('change',e=>{overlayConfig().position=e.target.value;saveState();render();});
+    document.getElementById('obsAnimationSelect')?.addEventListener('change',e=>{overlayConfig().animations=e.target.value==='on';saveState();render();});
+    document.getElementById('obsBrandInput')?.addEventListener('change',e=>{overlayConfig().brand=(e.target.value||'ASC 2027').trim().slice(0,12);saveState();render();});
+    document.getElementById('obsReplayAnimationBtn')?.addEventListener('click',()=>{const p=document.querySelector('.overlay-preview');if(!p)return;const m=overlayMatch(4);p.innerHTML=renderObsScoreboard(m,{animate:true});});
+    document.getElementById('obsThemeSelect')?.addEventListener('change',e=>{overlayConfig().theme=e.target.value;saveState();render();});
+    document.getElementById('obsPositionSelect')?.addEventListener('change',e=>{overlayConfig().position=e.target.value;saveState();render();});
+    document.getElementById('obsAnimationSelect')?.addEventListener('change',e=>{overlayConfig().animations=e.target.value==='on';saveState();render();});
+    document.getElementById('obsBrandInput')?.addEventListener('change',e=>{overlayConfig().brand=(e.target.value||'ASC 2027').trim().slice(0,12);saveState();render();});
+    document.getElementById('obsReplayAnimationBtn')?.addEventListener('click',()=>{const p=document.querySelector('.overlay-preview');if(!p)return;const m=overlayMatch(4);p.innerHTML=renderObsScoreboard(m,{animate:true});});
     document.querySelectorAll('[data-board-open]').forEach(b=>b.onclick=()=>{selectedBoard=Number(b.dataset.boardOpen);currentView='boards';render();});
     document.getElementById('startTournamentBtn')?.addEventListener('click', startTournament);
 
