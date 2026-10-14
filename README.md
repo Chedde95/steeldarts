@@ -1,11 +1,11 @@
-# Steeldartscup MVP v12 – Phase Review
+# 3. Alpirsbacher Steeldartscup – v13 OBS Overlay
 
-Änderung gegenüber v11:
-- Phasenleiste wird jetzt aus dem tatsächlichen Turnierfortschritt berechnet.
-- Vor Turnierstart: Check-in.
-- Sobald Gruppenspiele laufen/gespielt wurden: Gruppenphase.
-- Nach abgeschlossener Gruppenphase: Letzte 32.
-- KO-Phasen werden anhand der tatsächlich laufenden/abgeschlossenen KO-Matches erkannt.
-- Kopfzeile, Dashboard, Turnierplan und Beamer verwenden denselben berechneten Status.
+Prototype der Turniersoftware. Neu in v13: OBS-Overlay für Hauptboard 4.
 
-Hinweis: Dies bleibt ein lokaler GitHub-Pages-Prototyp. Echte Mehrgeräte-Synchronisierung, Push und produktiver KO-Boardbetrieb folgen mit Backend/Server.
+- Turnierleitung: neuer Menüpunkt **OBS Overlay**
+- Vorschau des TV-Scoreboards
+- eigener transparenter Browser-Source-Tab für OBS
+- Score, Legs, Rest, aktiver Spieler, Runde/BO und Finish-Hinweis
+- Live-Aktualisierung aus demselben lokalen Counter-Stand
+
+Hinweis: Im statischen GitHub-Pages-Prototyp ist der Overlay-Link noch nicht sicher geschützt. In der produktiven Serverversion wird der Zugriff ausschließlich über Turnierleitungs-Login bzw. einen generierten OBS-Token möglich sein.
